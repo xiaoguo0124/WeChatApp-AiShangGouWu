@@ -1,0 +1,4 @@
+<!--pages/login/index.wxml-->
+<button type="primary" plain="{{true}}" bindtap="getUserProfile">
+    授权登录
+</button>

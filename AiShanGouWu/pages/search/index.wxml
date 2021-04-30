@@ -1,0 +1,21 @@
+<!--pages/search/index.wxml-->
+<view class="search_row">
+    <input value="{{inpValue}}" placeholder="请输入您要搜索的商品" bindinput="handleInput"></input>
+    <button bindtap="handleCancel" hidden="{{!isFocus}}">取消</button>
+</view>
+<view class="search_content">
+    <navigator url="/pages/goods_detail/index?goods_id={{item.goods_id}}" class="search_item" wx:for="{{goods}}" wx:key="goods_id">
+        {{item.goods_name}}
+    </navigator>
+</view>
+
+
+
+<!-- 
+    控制标签的显示隐藏
+    1 wx:if
+    直接把这个标签从页面结构中删除，不适用于频繁的控制标签显示隐藏
+    2 hidden
+    通过给标签加样式 来控制显示和隐藏 
+    频繁的控制标签显示隐藏时 用它性能较好
+ -->
